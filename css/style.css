@@ -46,7 +46,6 @@ ul
     display:block;
     padding:0 30px;
     opacity:1;
-    
     left:270px;
     top:0;
     right:0;
@@ -62,9 +61,9 @@ ul
 {
 z-index:2;
 opacity:1;
-animation:slideSection 0.5s ease;
+animation:fade 0.5s ease-in-out;
 }
-@keyframes sldeSection
+@keyframes fade
 {
     0%
     {
@@ -135,7 +134,7 @@ animation:slideSection 0.5s ease;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index:10;
+    z-index:1;
     height:100%;
 }
 .aside .logo
@@ -387,8 +386,8 @@ h3.hello span
 }
 .about .about-content .personal-info
 {
-    flex:0 0 50%;
-    max-width:50%;
+    flex:0 0 40%;
+    max-width:40%;
     margin-top:40px;
 }
 .about .about-content .personal-info .info-item
@@ -423,8 +422,8 @@ h3.hello span
     margin-top:10px;}
 /* Skills Section */
 .about .about-content .skills {
-  flex: 0 0 40%;
-  max-width: 40%;
+  flex: 0 0 60%;
+  max-width: 60%;
   margin-top: 40px;
 }
 
@@ -463,11 +462,6 @@ h3.hello span
   height: 100px;
   margin: 0 auto;
 }
-
-.about .about-content .skills .skill-item .circle-svg {
-  
-}
-
 .about .about-content .skills .skill-item .circle-bg {
   fill: none;
   stroke: var(--bg-black-50);
@@ -500,14 +494,10 @@ h3.hello span
 }
 
 @media (max-width: 767px) {
-  .about .about-content .skills {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-  .about .about-content .skills .skill-item {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
+    .about .about-content .skills .skill-item {
+        flex: 0 0 45%;
+        max-width: 45%;
+      }
 }
 .about .about-content .education,
 .about .about-content .experience
@@ -699,7 +689,7 @@ h3.hello span
     margin-top:20px;
 }
 .contact{
-    padding:50px 0 0 60px;
+    padding:4% 0 0 8%;
 }
 .contact .container
 {
