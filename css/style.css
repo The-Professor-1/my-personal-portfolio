@@ -53,6 +53,7 @@ ul
     z-index:0;
     overflow-y: auto;
     overflow-x:hidden;
+    position:fixed;
 }
 .section.back-section {
     z-index:1;
@@ -61,19 +62,15 @@ ul
 {
 z-index:2;
 opacity:1;
-animation:fade 0.5s ease-in-out;
+animation:slide 1s ease;
 }
-@keyframes fade
-{
-    0%
-    {
-        transform:translateX(100%);
+@keyframes slide {
+    0% {
+        transform: translateX(100%);
     }
-    100%
-    {
-        transform:translateX(0%)
+    100% {
+        transform: translateX(0%);
     }
-    
 }
 .section .container
 {
@@ -241,7 +238,7 @@ animation:fade 0.5s ease-in-out;
     color:var(--text-black-900);
     padding:5px 15px;
 }
-.aside .nav li a:active
+.aside .nav li a:hover,.aside .nav li a.active
 {
     color:var(--skin-color);
 }
