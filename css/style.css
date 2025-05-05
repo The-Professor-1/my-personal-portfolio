@@ -415,7 +415,7 @@ h3.hello span
 }
 .about .about-content .personal-info .title
 {
-    color:var(--black-900);
+    color:var(--text-black-900);
 }
 .about .about-content .personal-info .buttons .btn
 {
