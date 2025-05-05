@@ -413,6 +413,10 @@ h3.hello span
 {
     margin-top:30px;
 }
+.about .about-content .personal-info .title
+{
+    color:var(--black-900);
+}
 .about .about-content .personal-info .buttons .btn
 {
     margin-right:15px;
