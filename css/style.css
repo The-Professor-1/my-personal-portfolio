@@ -51,19 +51,19 @@ ul
     top:0;
     right:0;
     bottom:0;
-    z-index:0;
+    z-index:1;
     overflow-y: auto;
     overflow-x:hidden;
     transition: all 0.3s ease;
 }
 .section.back-section {
-    z-index:1;
+    z-index:2;
 }
 .section.active
 {
-z-index:2;
-opacity:1;
-animation:slide 0.5s forwards;
+    z-index:3;
+    opacity:1;
+    animation:slide 0.5s forwards;
 }
 @keyframes slide {
     0% {
@@ -132,7 +132,7 @@ animation:slide 0.5s forwards;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index:1;
+    z-index:4;
     height:100%;
     transition: all 0.3s ease;
 }
@@ -186,13 +186,14 @@ animation:slide 0.5s forwards;
     border:1px solid var(--bg-black-50);
     cursor:pointer;
     position: fixed;
-    left:300px;
+    left:30px;
     top:20px;
     border-radius:5px;
     display: none;
     justify-content: center;
     align-items: center;
     background:var(--bg-black-100);
+    z-index: 5;
 }
 .aside .nav-toggler span 
 {
@@ -786,6 +787,7 @@ h3.hello span
     .aside
     {
         left:-270px;
+        z-index: 4;
     }
     .aside.open 
     {
@@ -793,8 +795,7 @@ h3.hello span
     }
    .aside .nav-toggler 
     {
-        display:flex;
-        left:30px;
+        display: flex !important;
     }
     .aside .nav-toggler.open
     {
@@ -805,10 +806,10 @@ h3.hello span
         left:0;
     }
     .about .about-content .personal-info .info-item p span
-{
-    display:block;
-    margin-left:0;
-}
+    {
+        display:block;
+        margin-left:0;
+    }
 }
 @media(max-width:991px)
 {

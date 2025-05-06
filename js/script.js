@@ -23,6 +23,24 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    // Set default section to home
+    const currentHash = window.location.hash.substring(1) || "home";
+    for (let i = 0; i < totalSection; i++) {
+        allSection[i].classList.remove("active");
+        if (allSection[i].id === currentHash) {
+            allSection[i].classList.add("active");
+        }
+    }
+    // Update nav link active state
+    for (let i = 0; i < totalNavList; i++) {
+        const a = navList[i].querySelector("a");
+        a.classList.remove("active");
+        if (a.getAttribute("href").substring(1) === currentHash) {
+            a.classList.add("active");
+        }
+    }
+
+    // Navigation click handlers
     for (let i = 0; i < totalNavList; i++) {
         const a = navList[i].querySelector("a");
         a.addEventListener("click", function () {
@@ -37,6 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             this.classList.add("active");
             showSection(this);
+            // Close sidebar on small screens when section is selected
+            if (window.innerWidth <= 1199) {
+                aside.classList.remove("open");
+                navTogglerBtn.classList.remove("open");
+            }
         });
     }
 
@@ -70,4 +93,17 @@ document.addEventListener("DOMContentLoaded", () => {
         aside.classList.toggle("open");
         navTogglerBtn.classList.toggle("open");
     }
+
+    // Close sidebar when clicking outside
+    document.addEventListener("click", (e) => {
+        if (window.innerWidth <= 1199) {
+            const isClickInsideAside = aside.contains(e.target);
+            const isClickOnToggler = navTogglerBtn.contains(e.target);
+            
+            if (!isClickInsideAside && !isClickOnToggler && aside.classList.contains("open")) {
+                aside.classList.remove("open");
+                navTogglerBtn.classList.remove("open");
+            }
+        }
+    });
 });
