@@ -142,15 +142,14 @@ ul
    top:50px;
    font-size:30px;
    text-transform: capitalize;
-   border: 5px solid var(--skin-color);
    border-radius: 10px;
    padding: 10px 20px;
-   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+   box-shadow: 0 0 10px var(--text-black-900);
 }
 .aside .logo a
 {
     color:var(--text-black-900);
-    font-weight:700;
+    font-weight:500;
     padding:15px 20px;
     font-size:30px;
     letter-spacing:5px;
@@ -158,8 +157,10 @@ ul
 }
 .aside .logo a span
 {
-    font-family:'clicker script', cursive;
+    font-family:'allura';
     font-size:40px;
+    font-weight:700;
+    color:var(--skin-color);
 }
 
 .aside .nav-toggler 
