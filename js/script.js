@@ -106,4 +106,35 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
+
+    // Footer visibility control
+    const footer = document.querySelector('footer');
+    let lastScrollTop = 0;
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                
+                // Show footer when user reaches bottom of the page
+                if (scrollTop + windowHeight >= documentHeight - 100) {
+                    footer.classList.add('show');
+                } else {
+                    footer.classList.remove('show');
+                }
+                
+                lastScrollTop = scrollTop;
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    // Initial check for footer visibility
+    if (window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 100) {
+        footer.classList.add('show');
+    }
 });
