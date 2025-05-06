@@ -142,7 +142,6 @@ ul
    top:50px;
    font-size:30px;
    text-transform: capitalize;
-   border: 2px solid var(--skin-color);
    border-radius: 10px;
    padding: 10px 20px;
    box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -158,8 +157,9 @@ ul
 }
 .aside .logo a span
 {
-    font-family:'clicker script', cursive;
+    font-family:'berkshire', cursive;
     font-size:40px;
+    color:var(--skin-color);
 }
 
 .aside .nav-toggler 
