@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Typed.js Animation
     if (typeof Typed !== "undefined") {
         var typed = new Typed('.typing', {
-            strings: ["", "Web Developer", "Software Engineer", "AI/ML Engineer", "Mobile Developer"],
+            strings: ["", "Web Developer", "Django Developer", "AI/ML Developer", "Software Tester"],
             typeSpeed: 100,
             backSpeed: 60,
             loop: true
