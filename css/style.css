@@ -157,7 +157,7 @@ ul
 }
 .aside .logo a span
 {
-    font-family:'grand hotel', cursive;
+    font-family:'grand hotel';
     font-size:40px;
     font-weight:700;
     color:var(--skin-color);
