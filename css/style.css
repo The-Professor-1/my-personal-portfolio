@@ -728,7 +728,7 @@ h3.hello span
 .contact .contact-info
 {
     display:block;
-    margin:0 0 0 90%;
+    margin:0 0 0 0%;
 }
 .contact .contact-info .contact-info-item .fa
 {
