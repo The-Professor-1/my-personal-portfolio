@@ -762,7 +762,7 @@ h3.hello span
 }
 .check-on-github
 {
-    color:var(--text-black-900);
+    color:#148ef1;
     padding:10px 10px;
     font-size:20px;
     font-weight: 400;
