@@ -95,11 +95,11 @@ ul
 }
 .section-title h2
 {
-    font-size:40px;
+    font-size:50px;
     color:var(--text-black-900);
-    font-weight:700;
+    font-weight: 700;
     position:relative;
-    font-family: 'ShadowedBlack', sans-serif;
+    font-family:'ShadowedBlack', cursive;
     letter-spacing: 1px;
 }
 .section-title h2::before
@@ -160,7 +160,6 @@ ul
 .aside .logo a
 {
     color:var(--text-black-900);
-    font-weight:500;
     padding:15px 20px;
     font-size:40px;
     font-family: 'ShadowedBlack', sans-serif;
@@ -171,7 +170,7 @@ ul
 {
     font-family: 'ShadowedBlack', sans-serif;
     font-size:50px;
-    font-weight:600;
+   
     color:var(--skin-color);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -315,9 +314,9 @@ h3.hello
 }
 h3.hello span
 {
-    font-family:'poppins',cursive;
+    font-family:'arial', cursive;
     font-size:40px;
-    font-weight:700;
+    font-weight: 700;
     color:var(--skin-color);
 }
 .h3.my-profession
