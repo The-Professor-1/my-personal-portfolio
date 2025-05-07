@@ -48,6 +48,19 @@ ul
 {
     list-style:none;
 }
+.social-links {
+  margin-top: -30px;
+    display: flex;
+    gap: 15px; /* Space between icons */
+    justify-content: center;
+}
+.social-icon {
+    color: var(--skin-color);/* Icon color */
+    transition: color 0.3s ease;
+}
+.social-icon:hover {/* Hover color */
+    transform:scale(1.5);
+}
 .section
 {
     background:var(--bg-black-900);
