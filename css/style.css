@@ -51,7 +51,7 @@ ul
 .social-links {
   margin-top: -30px;
     display: flex;
-    gap: 15px; /* Space between icons */
+    gap: 25px; /* Space between icons */
     justify-content: center;
 }
 .social-icon {
@@ -60,6 +60,7 @@ ul
 }
 .social-icon:hover {/* Hover color */
     transform:scale(1.5);
+    transition: all 0.3s ease;
 }
 .section
 {
@@ -758,6 +759,18 @@ h3.hello span
     width:100%;
     padding: 5px 5px;
     margin-top:20px;
+}
+.check-on-github
+{
+    color:var(--text-black-900);
+    padding:10px 10px;
+    font-size:20px;
+    font-weight: 400;
+}
+.check-on-github:hover,.check-on-github i
+{
+    transition:all 0.3s ease;
+    color:var(--skin-color);
 }
 .contact{
     padding:4% 0 0 8%;
