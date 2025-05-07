@@ -55,7 +55,7 @@ ul
     display:block;
     position:fixed;
     padding:0 30px;
-    opacity:1;
+    opacity:0;
     left:270px;
     top:0;
     right:0;
@@ -64,14 +64,17 @@ ul
     overflow-y: auto;
     overflow-x:hidden;
     transition: all 0.3s ease;
+    pointer-events: none;
 }
 .section.back-section {
     z-index:2;
+    pointer-events: none;
 }
 .section.active
 {
     z-index:3;
     opacity:1;
+    pointer-events: auto;
     animation:slide 0.5s forwards;
 }
 @keyframes slide {
@@ -291,6 +294,8 @@ ul
     white-space:nowrap;
     background:var(--skin-color);
     transition:all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
 }
 .btn:hover
 {

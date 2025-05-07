@@ -31,37 +31,53 @@ document.addEventListener("DOMContentLoaded", () => {
             allSection[i].classList.add("active");
         }
     }
-    // Update nav link active state
-    for (let i = 0; i < totalNavList; i++) {
-        const a = navList[i].querySelector("a");
-        a.classList.remove("active");
-        if (a.getAttribute("href").substring(1) === currentHash) {
-            a.classList.add("active");
+
+    // Function to handle section switching
+    function handleSectionSwitch(element) {
+        for (let i = 0; i < totalSection; i++) {
+            allSection[i].classList.remove("back-section");
+        }
+        for (let j = 0; j < totalNavList; j++) {
+            if (navList[j].querySelector("a").classList.contains("active")) {
+                allSection[j].classList.add("back-section");
+            }
+            navList[j].querySelector("a").classList.remove("active");
+        }
+        
+        // Update navigation active state
+        const target = element.getAttribute("href").split("#")[1];
+        const navLink = nav.querySelector(`a[href="#${target}"]`);
+        if (navLink) {
+            navLink.classList.add("active");
+        }
+        
+        showSection(element);
+        
+        // Close sidebar on small screens when section is selected
+        if (window.innerWidth <= 1199) {
+            aside.classList.remove("open");
+            navTogglerBtn.classList.remove("open");
         }
     }
 
-    // Navigation click handlers
+    // Add click handlers to navigation links
     for (let i = 0; i < totalNavList; i++) {
         const a = navList[i].querySelector("a");
-        a.addEventListener("click", function () {
-            for (let i = 0; i < totalSection; i++) {
-                allSection[i].classList.remove("back-section");
-            }
-            for (let j = 0; j < totalNavList; j++) {
-                if (navList[j].querySelector("a").classList.contains("active")) {
-                    allSection[j].classList.add("back-section");
-                }
-                navList[j].querySelector("a").classList.remove("active");
-            }
-            this.classList.add("active");
-            showSection(this);
-            // Close sidebar on small screens when section is selected
-            if (window.innerWidth <= 1199) {
-                aside.classList.remove("open");
-                navTogglerBtn.classList.remove("open");
-            }
+        a.addEventListener("click", function(e) {
+            e.preventDefault();
+            handleSectionSwitch(this);
         });
     }
+
+    // Add click handlers to all section links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        if (!link.closest('.nav')) { // Skip navigation links as they're already handled
+            link.addEventListener("click", function(e) {
+                e.preventDefault();
+                handleSectionSwitch(this);
+            });
+        }
+    });
 
     function showSection(element) {
         for (let i = 0; i < totalSection; i++) {
