@@ -29,12 +29,16 @@
     transition:all 0.3s ease;
     border-radius:50%;
 }
+.style-switcher .s-icon:hover {
+    transform: rotate(180deg);
+    color: var(--skin-color);
+    background: var(--bg-black-50);
+}
 .style-switcher .s-icon {
     line-height:40px;
 }
 .style-switcher .style-switcher-toggler {
     top:0;
-
 }
 .style-switcher .day-night {
     top:55px;
