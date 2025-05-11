@@ -329,7 +329,7 @@ ul
 h3.hello
 {
     font-size:28px;
-    margin:15px 0;
+    margin:10% 0 0;
 }
 h3.hello span
 {
@@ -366,7 +366,7 @@ h3.hello span
     height: 400px;
     width: 400px;
     border-radius: 50%;
-    margin: auto;
+    margin: 70px auto 0;
     object-fit: cover;
     border: 5px solid var(--skin-color);
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
