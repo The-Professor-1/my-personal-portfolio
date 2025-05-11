@@ -745,7 +745,7 @@ h3.hello span
 .portfolio .portfolio-item .portfolio-item-inner .portfolio-img img {
     flex: 0 0 50%;
     max-width: 50%;
-    height: auto;
+    height: 200px;
     margin-top: 0;
 }
 
