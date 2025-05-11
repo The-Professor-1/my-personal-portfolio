@@ -438,55 +438,73 @@ In addition to writing clean and efficient code, I believe in continuous learnin
                 </div><br><br><br><br><br>
             </section>
             <section class="contact section padd-15" id="contact">
-                    <div class="row">
-                        <div class="section-title padd-15">
-                            <h2>Contact Me</h2>
-                                         </div>
-                    </div>
-                    <div class="container">
+              <div class="row">
+                <div class="section-title padd-15">
+                  <h2>Contact Me</h2>
+              </div>
+              </div>
+                <div class="container">
+              
                     <div class="row">
                         <div class="contact-info">
-                        <div class="contact-info-item padd-15">
-                            <div class="icon">
-                                <i class="fa fa-phone"></i>
+                            <div class="contact-info-item">
+                                <div class="icon">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                                <h4>Call Me</h4>
+                                <p>+251952838412</p>
                             </div>
-                            <h4>Call Me</h4>
-                            <p>+251952838412</p>
-                        </div>
-                        <div class="contact-info-item padd-15">
-                            <div class="icon">
-                                <i class="fa fa-envelope"></i>
+                            <div class="contact-info-item">
+                                <div class="icon">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <h4>Email Me</h4>
+                                <p>maymerlibe@gmail.com</p>
                             </div>
-                            <h4>Email Me</h4>
-                            <p>maymerlibe@gmail.com</p>
+                            <div class="contact-info-item">
+                                <div class="icon">
+                                    <i class="fa fa-map-marker-alt"></i>
+                                </div>
+                                <h4>Address</h4>
+                                <p>DebreMarkos City</p>
+                            </div>
                         </div>
-                
-                    
-                    <div class="contact-info-item padd-15">
-                        <div class="icon">
-                            <i class="fa fa-map-marker-alt"></i>
-                        </div>
-                        <h4>Address</h4>
-                        <p>DebreMarkos City</p>
-                    </div>
-                </div>
-                </div>
-                    <div class="row">
-                        <div class="contact-form padd-15">
+                        <div class="contact-form">
                             <h3>Send Me Message</h3>
-                            <input type="text" name="name" placeholder="Your Name" required>
-                     
-                        <input type="text" name="email" placeholder="Your email" required>
-                        
-                    <input type="text" name="subject" placeholder="subject" required>
-                    
-                    <textarea name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
-                            <button type="submit" class="btn">Send Message</button>
+                            <form id="contactForm" onsubmit="return handleSubmit(event)">
+                                <div class="form-group">
+                                    <input type="text" id="name" name="name" placeholder="Your Name" required 
+                                           pattern="[A-Za-z\s]{2,50}" 
+                                           title="Please enter a valid name (2-50 characters, letters only)">
+                                    <span class="error-message" id="nameError"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="email" id="email" name="email" placeholder="Your email" required
+                                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                           title="Please enter a valid email address">
+                                    <span class="error-message" id="emailError"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" id="subject" name="subject" placeholder="Subject" required
+                                           pattern="[A-Za-z0-9\s]{5,100}"
+                                           title="Please enter a valid subject (5-100 characters)">
+                                    <span class="error-message" id="subjectError"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <textarea id="message" name="message" cols="30" rows="10" placeholder="Message" required
+                                              minlength="10" maxlength="1000"></textarea>
+                                    <span class="error-message" id="messageError"></span>
+                                </div>
+                                
+                                <button type="submit" class="btn">Send Message</button>
+                            </form>
                         </div>
                     </div>
-                
-                </div><br><br><br><br><br>
-              </section>
+                </div>
+            </section>
      </div></div>  
      <div class="style-switcher">
         <div class="style-switcher-toggler s-icon">
@@ -508,6 +526,8 @@ In addition to writing clean and efficient code, I believe in continuous learnin
     <script src="js/script.js"></script>
     <script src="js/style-switcher.js"></script>
     <script src="js/skills-progress.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="js/contact.js"></script>
     <!--footer
     <footer>
         <p>&copy; 2024 Nigus Libe. All rights reserved. | Designed with <i class="fas fa-heart"></i> by <a href="#">Nigus</a></p>

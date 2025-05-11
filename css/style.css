@@ -775,42 +775,65 @@ h3.hello span
 .contact{
     padding:4% 0 0 8%;
 }
-.contact .container
-{
-    flex:0 0 50%;
-    max-width:100%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+.contact .container {
+    flex: 0 0 100%;
+    max-width: 90%;
+    margin: 0 0 0 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
 }
-.contact .contact-info
-{
-    display:block;
-    margin:0 0 0 40%;
+
+.contact .contact-info {
+    flex: 0 0 50%;
+    max-width: 25%;
+    display: block;
+    margin: 15% 0 0 5%;
 }
-.contact .contact-info .contact-info-item .fa
-{
-    color:var(--skin-color);
-}
-.contact .contact-info .contact-info-item
-{
+
+.contact .contact-info .contact-info-item {
     padding: 5px;
-    margin:10px;
+    margin: 10px 0;
+    transition: all 0.3s ease;
 }
-.contact .contact-info .contact-info-item p
-{
-    font-size:13px;
-    font-weight:500;
-    color:var(--text-black-900);
-    margin-bottom:10px;
+
+.contact .contact-info .contact-info-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
-.contact .contact-form
-{
-    flex:0 0 50%;
-    max-width:50%;
-    display:block;
-    margin:0 0 0 30%;
+
+.contact .contact-info .contact-info-item .icon {
+    margin-bottom: 10px;
 }
+
+.contact .contact-info .contact-info-item .fa {
+    color: var(--skin-color);
+    font-size: 20px;
+}
+
+.contact .contact-info .contact-info-item h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: var(--text-black-900);
+}
+
+.contact .contact-info .contact-info-item p {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-black-700);
+    margin: 0;
+}
+
+.contact .contact-form {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin: 0 0 0 20%;
+    padding: 30px;
+    
+}
+
 .contact .contact-form h3
 {
     font-size:24px;
@@ -818,6 +841,7 @@ h3.hello span
     font-weight:700;
     color:var(--text-black-900);
 }
+
 .contact .contact-info-item h4
 {
     font-size:15px;
@@ -825,6 +849,7 @@ h3.hello span
     font-weight:700;
     color:var(--text-black-900);
 }
+
 .contact .contact-form input
 {
     width:100%;
@@ -836,6 +861,7 @@ h3.hello span
     font-size:16px;
     color:var(--text-black-900);
 }
+
 .contact .contact-form textarea
 {
     width:100%;
@@ -847,6 +873,7 @@ h3.hello span
     font-size:16px;
     color:var(--text-black-900);
 }
+
 @media(max-width:1199px)
 {
     .aside
@@ -878,6 +905,16 @@ h3.hello span
 }
 @media(max-width:991px)
 {
+    .contact .container {
+        flex-direction: column;
+    }
+    
+    .contact .contact-info,
+    .contact .contact-form {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin: 0 0 30px 0;
+    }
     .contact .contact-info-item,
     .portfolio .portfolio-item,
     .services .services-item
@@ -990,5 +1027,44 @@ width:auto;
     .main-content {
         padding-bottom: 200px;
     }
+
+/* Contact Form Styles */
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--skin-color);
+    outline: none;
+}
+
+.error-message {
+    color: #ff3333;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+.form-group input:invalid,
+.form-group textarea:invalid {
+    border-color: #ff3333;
+}
+
+.form-group input:valid,
+.form-group textarea:valid {
+    border-color: #4CAF50;
+}
 
 
